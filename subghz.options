@@ -1,0 +1,44 @@
+PB_SubGhz.DecodeRawRequest.path              type:FT_POINTER
+PB_SubGhz.DecodeRawRequest.path              max_length:255
+PB_SubGhz.DecodeRawResponse.protocol         type:FT_POINTER
+PB_SubGhz.DecodeRawResponse.protocol         max_length:64
+PB_SubGhz.DecodeRawResponse.flipper_format   type:FT_POINTER
+
+PB_SubGhz.RxStartRequest.preset              type:FT_POINTER
+PB_SubGhz.RxStartRequest.preset              max_length:64
+PB_SubGhz.RxStartRequest.preset_b            type:FT_POINTER
+PB_SubGhz.RxStartRequest.preset_b            max_length:64
+PB_SubGhz.RxStartRequest.hop_frequencies     type:FT_POINTER
+PB_SubGhz.RxConfigRequest.preset             type:FT_POINTER
+PB_SubGhz.RxConfigRequest.preset             max_length:64
+PB_SubGhz.RxConfigRequest.preset_b           type:FT_POINTER
+PB_SubGhz.RxConfigRequest.preset_b           max_length:64
+PB_SubGhz.RxConfigRequest.hop_frequencies    type:FT_POINTER
+
+PB_SubGhz.RxStateResponse.preset             type:FT_POINTER
+PB_SubGhz.RxStateResponse.preset             max_length:64
+PB_SubGhz.RxStateResponse.preset_b           type:FT_POINTER
+PB_SubGhz.RxStateResponse.preset_b           max_length:64
+PB_SubGhz.RxStateResponse.device_name        type:FT_POINTER
+PB_SubGhz.RxStateResponse.device_name        max_length:32
+
+PB_SubGhz.RxEvent.rssi_samples               type:FT_POINTER
+PB_SubGhz.RxEvent.protocol                   type:FT_POINTER
+PB_SubGhz.RxEvent.protocol                   max_length:64
+PB_SubGhz.RxEvent.flipper_format             type:FT_POINTER
+PB_SubGhz.RxEvent.pulses                     type:FT_POINTER
+
+PB_SubGhz.TxRequest.flipper_format           type:FT_POINTER
+PB_SubGhz.TxRequest.path                     type:FT_POINTER
+PB_SubGhz.TxRequest.path                     max_length:255
+
+// Not enforced by nanopb; the firmware caps these when it fills a frame.
+PB_SubGhz.RxEvent.rssi_samples               max_size:64
+PB_SubGhz.RxEvent.pulses                     max_count:512
+PB_SubGhz.RxStartRequest.hop_frequencies     max_count:16
+PB_SubGhz.RxConfigRequest.hop_frequencies    max_count:16
+
+PB_SubGhz.SettingsResponse.frequencies        type:FT_POINTER
+PB_SubGhz.SettingsResponse.hopper_frequencies type:FT_POINTER
+PB_SubGhz.SettingsResponse.presets            type:FT_POINTER
+PB_SubGhz.SettingsResponse.presets            max_length:64
