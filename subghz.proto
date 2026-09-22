@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package PB_SubGhz;
+option java_package = "com.flipperdevices.protobuf.subghz";
+
+enum RadioDevice {
+    RADIO_DEVICE_INTERNAL = 0;
+    RADIO_DEVICE_EXTERNAL = 1;
+    RADIO_DEVICE_AUTO = 2;
+}
+
+message DecodeRawRequest {
+    string path = 1;
+}
+
+message DecodeRawResponse {
+    string protocol = 1;
+    string flipper_format = 2;
+    uint32 percent = 3;
+    uint32 hit_count = 4;
+    uint32 activity = 5;
+}
+message SettingsRequest {
+}
+
+message SettingsResponse {
+    repeated uint32 frequencies = 1;
+    repeated uint32 hopper_frequencies = 2;
+    repeated string presets = 3;
+    uint32 default_frequency = 4;
+}
+message DecodeRawStopRequest {
+}
+enum ProtocolFilter {
+    PROTOCOL_FILTER_NONE = 0;
+    PROTOCOL_FILTER_REVERS_RB2 = 2048;
+    PROTOCOL_FILTER_ALARMS = 4096;
+    PROTOCOL_FILTER_SENSORS = 8192;
+    PROTOCOL_FILTER_PRINCETON = 16384;
+    PROTOCOL_FILTER_NICE_FLOR_S = 32768;
+}
+
+message RxStartRequest {
+    uint32 frequency = 1;
+    string preset = 2;
+    uint32 rssi_interval_ms = 3;
+    bool hopping = 4;
+    repeated uint32 hop_frequencies = 5;
+    RadioDevice device = 6;
+    bool capture_pulses = 7;
+    uint32 ignore_filter = 8;
+    bool modulation_hopping = 9;
+    string preset_b = 10;
+    bool sound = 11;
+}
+
+message RxStopRequest {
+}
+message RxConfigRequest {
+    uint32 frequency = 1;
+    string preset = 2;
+    bool hopping = 3;
+    repeated uint32 hop_frequencies = 4;
+    bool capture_pulses = 5;
+    uint32 ignore_filter = 6;
+    bool modulation_hopping = 7;
+    string preset_b = 8;
+    bool sound = 9;
+}
+message RxStateResponse {
+    bool running = 1;
+    uint32 frequency = 2;
+    string preset = 3;
+    bool hopping = 4;
+    RadioDevice device = 5;
+    bool tx_allowed = 6;
+    string device_name = 7;
+    uint32 ignore_filter = 8;
+    bool modulation_hopping = 9;
+    string preset_b = 10;
+    bool sound = 11;
+}
+
+enum RxEventType {
+    RX_EVENT_RSSI = 0;
+    RX_EVENT_HIT = 1;
+    RX_EVENT_STOPPED = 2;
+}
+message RxEvent {
+    RxEventType type = 1;
+    bytes rssi_samples = 2;
+    uint32 frequency = 3;
+    sint32 noise_floor = 4;
+    string protocol = 5;
+    string flipper_format = 6;
+    sint32 rssi = 7;
+    uint32 timestamp_ms = 8;
+    bool transmittable = 9;
+    repeated uint32 pulses = 10;
+}
+message TxRequest {
+    string flipper_format = 1;
+    string path = 2;
+    uint32 repeat = 3;
+    RadioDevice device = 4;
+}
+
+message TxResponse {
+    uint32 repeat = 1;
+    uint32 frequency = 2;
+}

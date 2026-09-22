@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.31]
+### Added
+- SubGhz: RxStartRequest / RxStopRequest / RxConfigRequest / RxStateResponse / RxEvent for a live receive session driven from a companion
+- SubGhz: TxRequest / TxResponse to transmit a key file
+- SubGhz: DecodeRawStopRequest to cancel a running DecodeRaw
+- SubGhz: SettingsRequest / SettingsResponse exposing the device's frequency and preset tables
+
+## [0.30]
+### Added
+- SubGhz: DecodeRawRequest / DecodeRawResponse to decode a RAW .sub on-device
+
 ## [0.29]
 ### Added
 - Network: HTTP requests and WebSocket connection API
