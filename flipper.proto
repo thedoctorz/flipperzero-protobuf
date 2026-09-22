@@ -8,6 +8,7 @@ import "property.proto";
 import "desktop.proto";
 import "network.proto";
 import "gps.proto";
+import "subghz.proto";
 
 package PB;
 option java_package = "com.flipperdevices.protobuf";
@@ -158,6 +159,18 @@ message Main {
         .PB_Network.HttpRequest network_http_request = 88;
         .PB_Network.HttpResponse network_http_response = 89;
         .PB_Network.WebSocketOpenRequest network_websocket_open_request = 90;
+        .PB_SubGhz.DecodeRawRequest subghz_decode_raw_request = 91;
+        .PB_SubGhz.DecodeRawResponse subghz_decode_raw_response = 92;
+        .PB_SubGhz.DecodeRawStopRequest subghz_decode_raw_stop_request = 93;
+        .PB_SubGhz.RxStartRequest subghz_rx_start_request = 94;
+        .PB_SubGhz.RxStopRequest subghz_rx_stop_request = 95;
+        .PB_SubGhz.RxConfigRequest subghz_rx_config_request = 96;
+        .PB_SubGhz.RxStateResponse subghz_rx_state_response = 97;
+        .PB_SubGhz.RxEvent subghz_rx_event = 98;
+        .PB_SubGhz.TxRequest subghz_tx_request = 99;
+        .PB_SubGhz.TxResponse subghz_tx_response = 100;
+        .PB_SubGhz.SettingsRequest subghz_settings_request = 101;
+        .PB_SubGhz.SettingsResponse subghz_settings_response = 102;
     }
 }
 
