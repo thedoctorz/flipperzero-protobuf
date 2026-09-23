@@ -124,6 +124,8 @@ message Main {
         .PB_Gui.StopScreenStreamRequest gui_stop_screen_stream_request = 21;
         .PB_Gui.ScreenFrame gui_screen_frame = 22;
         .PB_Gui.SendInputEventRequest gui_send_input_event_request = 23;
+        .PB_Gui.SendTextRequest gui_send_text_request = 103;
+        .PB_Gui.InputFocus gui_input_focus = 104;
         .PB_Gui.StartVirtualDisplayRequest gui_start_virtual_display_request = 26;
         .PB_Gui.StopVirtualDisplayRequest gui_stop_virtual_display_request = 27;
         .PB_Gpio.SetPinMode gpio_set_pin_mode = 51;

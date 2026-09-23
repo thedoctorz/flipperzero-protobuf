@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.32]
+### Added
+- Gui: SendTextRequest and InputFocus for remote keyboard insert, backspace, and submit
+
 ## [0.31]
 ### Added
 - SubGhz: RxStartRequest / RxStopRequest / RxConfigRequest / RxStateResponse / RxEvent for a live receive session driven from a companion

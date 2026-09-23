@@ -50,3 +50,25 @@ message StartVirtualDisplayRequest {
 
 message StopVirtualDisplayRequest {
 }
+
+enum InputFocusKind {
+    NONE = 0;
+    TEXT = 1;
+    BYTE = 2;
+    NUMBER = 3;
+}
+
+enum TextAction {
+    INSERT = 0;
+    BACKSPACE = 1;
+    SUBMIT = 2;
+}
+
+message SendTextRequest {
+    TextAction action = 1;
+    string text = 2;
+}
+
+message InputFocus {
+    InputFocusKind kind = 1;
+}

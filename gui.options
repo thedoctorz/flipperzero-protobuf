@@ -1,2 +1,3 @@
 PB_Gui.ScreenFrame.data                  type:FT_POINTER
 PB_Gui.ScreenFrame.data                  max_size:1024
+PB_Gui.SendTextRequest.text              type:FT_POINTER
