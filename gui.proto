@@ -33,6 +33,9 @@ message ScreenFrame {
 }
 
 message StartScreenStreamRequest {
+    // Also push InputFocus while streaming. Off by default: clients built against an older
+    // schema (qFlipper, the official apps) cannot skip a Main message they do not know.
+    bool input_focus = 1;
 }
 
 message StopScreenStreamRequest {
